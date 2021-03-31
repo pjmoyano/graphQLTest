@@ -5,16 +5,33 @@ type Friend {
     id: ID
     firstName: String
     lastName: String
-    gender: String
-    email: [Email]!
-}
-
-type Email {
+    gender: Gender
+    age:  Int
     email: String
 }
 
+enum Gender {
+    MALE
+    FEMALE
+    OTHER
+}
+
+
 type Query {
-    friend: Friend
+    getFriend(id: ID): Friend
+}
+
+input FriendInput {
+    id: ID
+    firstName: String
+    lastName: String
+    gender: Gender
+    age: Int
+    email: String
+}
+
+type Mutation {
+    createFriend(input: FriendInput): Friend
 }
 `
 )
