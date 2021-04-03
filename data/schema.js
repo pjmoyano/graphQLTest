@@ -7,9 +7,17 @@ type Friend {
     firstName: String
     lastName: String
     gender: Gender
+    language: String
     age:  Int
     email: String
     contacts: [Contact]
+}
+
+type Alien {
+    id: ID
+    firstName: String
+    lastName: String
+    planet: String
 }
 
 type Contact {
@@ -33,6 +41,7 @@ input FriendInput {
     firstName: String
     lastName: String
     gender: Gender
+    language: String
     age: Int
     email: String
     contacts: [ContactInput]
